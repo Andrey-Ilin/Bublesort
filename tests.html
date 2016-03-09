@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+    <script>
+        mocha.setup('bdd');
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+    <script>
+        var assert = chai.assert;
+        var expect = chai.expect;
+    </script>
+</head>
+
+<body>
+
+<!---------------------------------------------------->
+
+<div style="display: none">
+    <input type="text" id="input" placeholder="Enter a number here">
+
+    <div>
+        <input type="button" id="cancel" value="Cancel/Clear">
+        <input type="button" id="addelement" value="Add for sort">
+    </div>
+    <div id="container"></div>
+    <div>
+        <input type="button" id="run" value="Run">
+        <input type="button" id="step" value="Make a step">
+    </div>
+</div>
+
+<!----------------------------------------------------->
+
+
+<script>
+    'use strict';
+    function bubleSort(arr) {
+        let tmp;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    tmp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = tmp;
+                }
+            }
+        }
+        return arr;
+    }
+</script>
+
+<script>
+    'use strict';
+    function bubleSortBySteps(arr) {
+        let i = 0;
+        let j = 0;
+        let tmp;
+
+        function stepInBubleSort(arr) {
+            if (i < arr.length - 1) {
+                if (j < arr.length - i - 1) {
+                    if (arr[j] > arr[j + 1]) {
+
+                        tmp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = tmp;
+                    }
+                }
+            }
+            j++;
+            if (j == arr.length - i - 1) {
+                j = 0;
+                i++;
+            }
+        }
+
+        for (let b = 0; b < ((arr.length - 1) * (arr.length / 2)); b++) {
+            stepInBubleSort(arr);
+        }
+
+        return arr;
+    }
+</script>
+
+<script src="./js/test.js"></script>
+<div id="mocha"></div>
+<script>
+    mocha.run();
+</script>
+</body>
+
+</html>

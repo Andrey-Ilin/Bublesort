@@ -1,0 +1,65 @@
+
+
+body {
+    padding: 40px;
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color: beige;
+}
+
+#container {
+    height: 80px;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: 1px solid crimson;
+    border-radius: 10px;
+    vertical-align: middle;
+    padding-top: 10px;
+    background-color: white;
+}
+
+div .forsort {
+    width: 70px;
+    height: 70px;
+    border: 2px solid lightseagreen;
+    border-radius: 8px;
+    font-size: 2em;
+    background-color: aqua;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    transition: 500ms;
+    margin: 20px;
+
+}
+
+#input {
+    width: 200px;
+    height: 30px;
+    border: 2px solid crimson;
+    border-radius: 13px;
+    font-size: 1.1em;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#addelement, #cancel  {
+    width: 150px;
+    height: 30px;
+    background-color: #c4df9b;
+    color: blueviolet;
+    font-size: 1.1em;
+    border-radius: 13px;
+    margin-right: 15px;
+}
+
+#step, #run {
+    width: 150px;
+    height: 30px;
+    background-color: #c4df9b;
+    color: blueviolet;
+    font-size: 1.1em;
+    border-radius: 13px;
+    margin-right: 15px;
+}
